@@ -9,7 +9,7 @@ MAINTAINER richard moe <me@richard.moe>
 RUN rpm -ivh https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el6.noarch.rpm
 
 # Dependencies
-RUN yum install salt-minion 
+RUN yum install -y salt-minion 
 
 # Volumes
 
