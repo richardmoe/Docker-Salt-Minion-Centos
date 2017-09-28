@@ -2,15 +2,16 @@
 # Salt Stack Salt Master Container
 #
 
-FROM ubuntu:16.04
+FROM centos:6
 MAINTAINER richard moe <me@richard.moe>
 
 # Update System
-RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
+RUN yum clean all && yum -y update
 
 # Dependencies
 
-RUN apt-get install -y software-properties-common sudo salt-minion
+RUN rpm -ivh https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el6.noarch.rpm
+RUN yum install -y salt-minion
 
 # Volumes
 
