@@ -6,10 +6,11 @@ FROM centos:6
 MAINTAINER richard moe <me@richard.moe>
 
 # Update System
-RUN rpm -ivh https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el6.noarch.rpm
+RUN yum clean all && yum -y update
 
 # Dependencies
-RUN yum install -y salt-minion 
+RUN rpm -ivh https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el6.noarch.rpm
+RUN yum install -y salt-minion
 
 # Volumes
 
