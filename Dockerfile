@@ -10,7 +10,7 @@ RUN yum clean all && yum -y update
 
 # Dependencies
 RUN rpm -ivh https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el6.noarch.rpm
-RUN yum install -y salt-minion
+RUN yum install -y salt-minion sudo
 
 # Volumes
 
