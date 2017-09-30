@@ -10,6 +10,7 @@ RUN yum clean all && yum -y update
 
 # Dependencies
 RUN rpm -ivh https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el6.noarch.rpm
+RUN rpm -ivh http://ftp.uninett.no/linux/epel/6/x86_64/epel-release-6-8.noarch.rpm
 RUN yum install -y salt-minion sudo
 
 # Volumes
